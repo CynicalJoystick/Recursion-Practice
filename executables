@@ -1,0 +1,38 @@
+# Each function will contain a base case as well as a recursive case
+# The recursive case will be executed until the base case is reached
+
+# Recursive product: a times b recursively
+def rec_product(a,b):
+  if b == 0:
+    return 0
+  else:
+    return a + rec_product(a,b-1)
+    
+# Recursive exponential: a to the power of b recursively    
+def rec_exp(b,e):
+  if e == 0:
+    return 1
+  else:
+    return b * rec_exp(b,e-1)
+    
+# Find the minimum value of an array recursively
+def rec_min(arr, index):
+  if index == len(arr) - 1:
+    return arr[index]
+  else:
+    min_from_right = rec_min(arr,index-1)
+    if arr[index] < min_from_right:
+      return arr[index]
+    else:
+      return min_from_right
+      
+# Find the maximum value of an array recursively
+def rec_max(arr, index):
+  if index == len(arr) - 1:
+    return arr[index]
+  else:
+    max_from_right = rec_max(arr,index-1)
+    if arr[index] > max_from_right:
+      return arr[index]
+    else:
+      return max_from_right
